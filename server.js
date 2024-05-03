@@ -5,6 +5,11 @@ const nodemailer = require("nodemailer");
 
 // server used to send send emails
 const app = express();
+const corsOptions = {
+  origin: "https://127.0.0.1:5173",
+  methods: ["POST","GET"],
+  credentials: true,
+}
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
